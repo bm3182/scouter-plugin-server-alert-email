@@ -130,6 +130,12 @@ public class EmailPlugin {
                             String cc = conf.getValue("ext_plugin_email_cc_address");
                             String bcc = conf.getValue("ext_plugin_email_bcc_address");
 
+                            // Service Manager Mail
+                            String esc_to = conf.getValue("ext_plugin_email_esc_address");
+                            String exp_to = conf.getValue("ext_plugin_email_exp_address");
+                            String tms_to = conf.getValue("ext_plugin_email_tms_address");
+                            String igap_to = conf.getValue("ext_plugin_email_igap_address");
+
                             assert hostname != null;
                             assert port > 0;
                             assert username != null;
@@ -231,6 +237,42 @@ public class EmailPlugin {
 
                             for (String addr : to.split(",")) {
                                 email.addTo(addr);
+                            }
+
+                            if(name == "/cjescwas01/escprd1" || name == "/cjescwas02/escprd2" || name == "/cjescwasdev/escdev")
+                            {
+                                if (esc_to != null) {
+                                    for (String addr : esc_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            }
+
+                            if(name == "/cjwas03/expwas01" || name == "/cjwas04/expwas02")
+                            {
+                                if (exp_to != null) {
+                                    for (String addr : exp_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            }
+
+                            if(name == "/cjwas03/igap_was3" || name == "/cjwas04/igap_was4")
+                            {
+                                if (igap_to != null) {
+                                    for (String addr : igap_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            }
+
+                            if(name == "/cjwas03/tmsprd1-1" || name == "/cjwas03/tmsprd1-2" || name == "/cjwas04/tmsprd2-1" || name == "/cjwas04/tmsprd2-2")
+                            {
+                                if (tms_to != null) {
+                                    for (String addr : tms_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
                             }
 
                             if (cc != null) {
