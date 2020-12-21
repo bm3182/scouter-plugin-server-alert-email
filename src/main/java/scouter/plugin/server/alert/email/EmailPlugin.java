@@ -141,7 +141,7 @@ public class EmailPlugin {
                             assert username != null;
                             assert password != null;
                             assert from != null;
-                            assert to != null;
+                            //assert to != null;
 
                             // Get agent Name
                             String name = AgentManager.getAgentName(pack.objHash) == null ? "N/A" : AgentManager.getAgentName(pack.objHash);
@@ -235,9 +235,7 @@ public class EmailPlugin {
                             email.setSubject(subject);
                             email.setMsg(message);
 
-                            for (String addr : to.split(",")) {
-                                email.addTo(addr);
-                            }
+                            String objName = name;
 
                             if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name) || "/cjescwasdev/escdev".equals(name)) {
                                 if (esc_to != null) {
@@ -245,29 +243,27 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
-                            }
-
-                            if("/cjwas03/expwas01".equals(name) || "/cjwas04/expwas02".equals(name)) {
+                            } else if("/cjwas03/expwas01".equals(name) || "/cjwas04/expwas02".equals(name)) {
                                 if (exp_to != null) {
                                     for (String addr : exp_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            }
-
-                            if("/cjwas03/igap_was3".equals(name) || "/cjwas04/igap_was4".equals(name)) {
+                            } else if("/cjwas03/igap_was3".equals(name) || "/cjwas04/igap_was4".equals(name)) {
                                 if (igap_to != null) {
                                     for (String addr : igap_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            }
-
-                            if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
+                            } else if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
                                 if (tms_to != null) {
                                     for (String addr : tms_to.split(",")) {
                                         email.addTo(addr);
                                     }
+                                }
+                            } else {
+                                for (String addr : to.split(",")) {
+                                    email.addTo(addr);
                                 }
                             }
 
@@ -287,7 +283,7 @@ public class EmailPlugin {
                             email.send();
 
                             lastSentTimestamp = System.currentTimeMillis();
-                            println("Email sent to [" + name + "] [" + to + "] successfully.");
+                            println("Email sent to [" + name + "] [" + email.getToAddresses().toString() + "] successfully.");
                         } catch (Exception e) {
                             println("[Error] : " + e.getMessage());
 
@@ -344,12 +340,12 @@ public class EmailPlugin {
         if (conf.getBoolean("ext_plugin_exception_xlog_enabled", false )) {
             if (pack.error != 0) {
                 String date = DateUtil.yyyymmdd(pack.endTime);
-                String service = TextRD.getString(date, TextTypes.SERVICE, pack.service);
+                String serviceName = TextRD.getString(date, TextTypes.SERVICE, pack.service);
                 AlertPack ap = new AlertPack();
                 ap.level = AlertLevel.ERROR;
                 ap.objHash = pack.objHash;
                 ap.title = "xlog Error";
-                ap.message = service + " - " + TextRD.getString(date, TextTypes.ERROR, pack.error);
+                ap.message = serviceName + " - " + TextRD.getString(date, TextTypes.ERROR, pack.error);
                 ap.time = System.currentTimeMillis();
                 ap.objType = AgentManager.getAgent(pack.objHash).objType;
                 alert(ap);
