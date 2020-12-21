@@ -239,7 +239,7 @@ public class EmailPlugin {
                                 email.addTo(addr);
                             }
 
-                            if(name.equals("/cjescwas01/escprd1") | name.equals("/cjescwas02/escprd2") | name.equals("/cjescwasdev/escdev")) {
+                            if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name) || "/cjescwasdev/escdev".equals(name)) {
                                 if (esc_to != null) {
                                     for (String addr : esc_to.split(",")) {
                                         email.addTo(addr);
@@ -247,7 +247,7 @@ public class EmailPlugin {
                                 }
                             }
 
-                            if(name.equals("/cjwas03/expwas01") | name.equals("/cjwas04/expwas02")) {
+                            if("/cjwas03/expwas01".equals(name) || "/cjwas04/expwas02".equals(name)) {
                                 if (exp_to != null) {
                                     for (String addr : exp_to.split(",")) {
                                         email.addTo(addr);
@@ -255,7 +255,7 @@ public class EmailPlugin {
                                 }
                             }
 
-                            if(name.equals("/cjwas03/igap_was3") | name.equals("/cjwas04/igap_was4")) {
+                            if("/cjwas03/igap_was3".equals(name) || "/cjwas04/igap_was4".equals(name)) {
                                 if (igap_to != null) {
                                     for (String addr : igap_to.split(",")) {
                                         email.addTo(addr);
@@ -263,7 +263,7 @@ public class EmailPlugin {
                                 }
                             }
 
-                            if(name.equals("/cjwas03/tmsprd1-1") | name.equals("/cjwas03/tmsprd1-2") | name.equals("/cjwas04/tmsprd2-1") | name.equals("/cjwas04/tmsprd2-2")) {
+                            if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
                                 if (tms_to != null) {
                                     for (String addr : tms_to.split(",")) {
                                         email.addTo(addr);
