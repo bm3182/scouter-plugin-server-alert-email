@@ -347,7 +347,7 @@ public class EmailPlugin {
                 ap.title = "xlog Error";
                 ap.message = serviceName + " - " + TextRD.getString(date, TextTypes.ERROR, pack.error);
                 ap.time = System.currentTimeMillis();
-                ap.objType = AgentManager.getAgent(pack.objHash).objType;
+                ap.objType = "scouter";
                 alert(ap);
             }
             try {
