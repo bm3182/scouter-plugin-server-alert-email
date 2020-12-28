@@ -339,15 +339,17 @@ public class EmailPlugin {
     public void xlog(XLogPack pack) {
         if (conf.getBoolean("ext_plugin_exception_xlog_enabled", false )) {
             if (pack.error != 0) {
-                String date = DateUtil.yyyymmdd(pack.endTime);
-                String serviceName = TextRD.getString(date, TextTypes.SERVICE, pack.service);
+                String serviceName = TextRD.getString(DateUtil.datetime(pack.endTime), TextTypes.SERVICE, pack.service);
+
                 AlertPack ap = new AlertPack();
+
                 ap.level = AlertLevel.ERROR;
                 ap.objHash = pack.objHash;
                 ap.title = "xlog Error";
-                ap.message = serviceName + " - " + TextRD.getString(date, TextTypes.ERROR, pack.error);
+                ap.message = serviceName + " - " + TextRD.getString(DateUtil.datetime(pack.endTime), TextTypes.ERROR, pack.error);
                 ap.time = System.currentTimeMillis();
                 ap.objType = "scouter";
+
                 alert(ap);
             }
             try {
