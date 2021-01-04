@@ -135,6 +135,7 @@ public class EmailPlugin {
                             String exp_to = conf.getValue("ext_plugin_email_exp_address");
                             String tms_to = conf.getValue("ext_plugin_email_tms_address");
                             String igap_to = conf.getValue("ext_plugin_email_igap_address");
+                            String wise_to = conf.getValue("ext_plugin_email_wise_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -166,9 +167,9 @@ public class EmailPlugin {
                             }
 
                             try {
-                                String ignoreNamePattern = conf.getValue("ext_plugin_ignore_name_patterns");
-                                String ignoreTitlePattern = conf.getValue("ext_plugin_ignore_title_patterns");
-                                String ignoreMessagePattern = conf.getValue("ext_plugin_ignore_message_patterns");
+                                String ignoreNamePattern = conf.getValue("ext_plugin_ignore_email_name_patterns");
+                                String ignoreTitlePattern = conf.getValue("ext_plugin_ignore_email_title_patterns");
+                                String ignoreMessagePattern = conf.getValue("ext_plugin_ignore_email_message_patterns");
 
                                 if (ignoreNamePattern != null && !"".equals(ignoreNamePattern)) {
                                     for (String pattern : ignoreNamePattern.split(",")) {
@@ -196,7 +197,7 @@ public class EmailPlugin {
                                     }
                                 }
 
-                                if (conf.getBoolean("ext_plugin_ignore_continuous_dup_alert", false) && lastPack != null) {
+                                if (conf.getBoolean("ext_plugin_ignore_email_continuous_dup_alert", false) && lastPack != null) {
                                     long diff = System.currentTimeMillis() - lastSentTimestamp;
                                     if (lastPack.objHash == pack.objHash && lastPack.title.equals(pack.title) && diff < DateUtil.MILLIS_PER_HOUR) {
                                         return;
@@ -258,6 +259,12 @@ public class EmailPlugin {
                             } else if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
                                 if (tms_to != null) {
                                     for (String addr : tms_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
+                                if (wise_to != null) {
+                                    for (String addr : wise_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
@@ -337,7 +344,7 @@ public class EmailPlugin {
 
     @ServerPlugin(PluginConstants.PLUGIN_SERVER_XLOG)
     public void xlog(XLogPack pack) {
-        if (conf.getBoolean("ext_plugin_exception_xlog_enabled", false )) {
+        if (conf.getBoolean("ext_plugin_exception_xlog_email_enabled", false )) {
             if (pack.error != 0) {
                 String serviceName = TextRD.getString(DateUtil.datetime(pack.endTime), TextTypes.SERVICE, pack.service);
 
