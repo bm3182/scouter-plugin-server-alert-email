@@ -135,6 +135,7 @@ public class EmailPlugin {
                             String exp_to = conf.getValue("ext_plugin_email_exp_address");
                             String tms_to = conf.getValue("ext_plugin_email_tms_address");
                             String igap_to = conf.getValue("ext_plugin_email_igap_address");
+                            String wise_to = conf.getValue("ext_plugin_email_wise_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -258,6 +259,12 @@ public class EmailPlugin {
                             } else if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
                                 if (tms_to != null) {
                                     for (String addr : tms_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
+                                if (wise_to != null) {
+                                    for (String addr : wise_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
