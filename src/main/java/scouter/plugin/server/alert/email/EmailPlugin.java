@@ -168,12 +168,21 @@ public class EmailPlugin {
 
                             try {
                                 String ignoreNamePattern = conf.getValue("ext_plugin_ignore_email_name_patterns");
+                                String ignoreLevelPattern = conf.getValue("ext_plugin_ignore_email_level_patterns");
                                 String ignoreTitlePattern = conf.getValue("ext_plugin_ignore_email_title_patterns");
                                 String ignoreMessagePattern = conf.getValue("ext_plugin_ignore_email_message_patterns");
 
                                 if (ignoreNamePattern != null && !"".equals(ignoreNamePattern)) {
                                     for (String pattern : ignoreNamePattern.split(",")) {
                                         if (name.matches(pattern.replaceAll("\\*", ".*"))) {
+                                            return;
+                                        }
+                                    }
+                                }
+
+                                if (ignoreLevelPattern != null && !"".equals(ignoreLevelPattern)) {
+                                    for (String pattern : ignoreLevelPattern.split(",")) {
+                                        if (AlertLevel.getName(pack.level).matches(pattern.replaceAll("\\*", ".*"))) {
                                             return;
                                         }
                                     }
