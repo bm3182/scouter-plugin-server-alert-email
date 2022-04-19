@@ -17,26 +17,14 @@
  */
 package scouter.plugin.server.alert.email;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
-
 import scouter.lang.AlertLevel;
 import scouter.lang.TextTypes;
 import scouter.lang.TimeTypeEnum;
 import scouter.lang.counters.CounterConstants;
-import scouter.lang.pack.AlertPack;
-import scouter.lang.pack.MapPack;
-import scouter.lang.pack.ObjectPack;
-import scouter.lang.pack.PerfCounterPack;
-import scouter.lang.pack.XLogPack;
+import scouter.lang.pack.*;
 import scouter.lang.plugin.PluginConstants;
 import scouter.lang.plugin.annotation.ServerPlugin;
 import scouter.net.RequestCmd;
@@ -48,6 +36,13 @@ import scouter.server.db.TextRD;
 import scouter.server.netio.AgentCall;
 import scouter.util.DateUtil;
 import scouter.util.HashUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Scouter server plugin to send alert via email
@@ -136,6 +131,7 @@ public class EmailPlugin {
                             String tms_to = conf.getValue("ext_plugin_email_tms_address");
                             String igap_to = conf.getValue("ext_plugin_email_igap_address");
                             String wise_to = conf.getValue("ext_plugin_email_wise_address");
+                            String mpro_to = conf.getValue("ext_plugin_email_mpro_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -245,7 +241,7 @@ public class EmailPlugin {
                             email.setSubject(subject);
                             email.setMsg(message);
 
-                            if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name) || "/cjescwasdev/escdev".equals(name)) {
+                            if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name)) {
                                 if (esc_to != null) {
                                     for (String addr : esc_to.split(",")) {
                                         email.addTo(addr);
@@ -272,6 +268,12 @@ public class EmailPlugin {
                             } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
                                 if (wise_to != null) {
                                     for (String addr : wise_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/cjwas03/mproWas03".equals(name) || "/cjwas04/mproWas04".equals(name)) {
+                                if (mpro_to != null) {
+                                    for (String addr : mpro_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
@@ -365,7 +367,7 @@ public class EmailPlugin {
             // Get agent Name
             String name = AgentManager.getAgentName(pack.objHash) == null ? "N/A" : AgentManager.getAgentName(pack.objHash);
 
-            if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name) || "/cjescwasdev/escdev".equals(name)) {
+            if ("/cjescwas01/escprd1".equals(name) || "/cjescwas02/escprd2".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_esc_email_enabled", false )){
                     alert(ap);
                 }
@@ -383,6 +385,10 @@ public class EmailPlugin {
                 }
             } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_wise_email_enabled", false )) {
+                    alert(ap);
+                }
+            } else if("/cjwas03/mproWas03".equals(name) || "/cjwas04/mproWas04".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_mpro_email_enabled", false )){
                     alert(ap);
                 }
             }
