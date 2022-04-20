@@ -132,6 +132,7 @@ public class EmailPlugin {
                             String igap_to = conf.getValue("ext_plugin_email_igap_address");
                             String wise_to = conf.getValue("ext_plugin_email_wise_address");
                             String mpro_to = conf.getValue("ext_plugin_email_mpro_address");
+                            String cis_to = conf.getValue("ext_plugin_email_cis_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -277,6 +278,12 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
+                            } else if("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
+                                if (mpro_to != null) {
+                                    for (String addr : cis_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
                             } else {
                                 for (String addr : to.split(",")) {
                                     email.addTo(addr);
@@ -389,6 +396,10 @@ public class EmailPlugin {
                 }
             } else if("/cjwas03/mproWas03".equals(name) || "/cjwas04/mproWas04".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_mpro_email_enabled", false )){
+                    alert(ap);
+                }
+            } else if("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_cis_email_enabled", false )){
                     alert(ap);
                 }
             }
