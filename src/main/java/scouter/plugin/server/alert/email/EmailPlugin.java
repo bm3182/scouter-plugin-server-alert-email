@@ -285,7 +285,7 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
                                 if (ods_to != null) {
                                     for (String addr : ods_to.split(",")) {
                                         email.addTo(addr);
@@ -409,7 +409,7 @@ public class EmailPlugin {
                 if (conf.getBoolean("ext_plugin_exception_xlog_cis_email_enabled", false )){
                     alert(ap);
                 }
-            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_ods_email_enabled", false )){
                     alert(ap);
                 }
