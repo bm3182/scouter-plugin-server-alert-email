@@ -285,7 +285,7 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
                                 if (ods_to != null) {
                                     for (String addr : ods_to.split(",")) {
                                         email.addTo(addr);
@@ -409,7 +409,7 @@ public class EmailPlugin {
                 if (conf.getBoolean("ext_plugin_exception_xlog_cis_email_enabled", false )){
                     alert(ap);
                 }
-            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_ods_email_enabled", false )){
                     alert(ap);
                 }
@@ -464,19 +464,35 @@ public class EmailPlugin {
                     long gcTime = pack.data.getLong(CounterConstants.JAVA_GC_TIME);
 
                     long heapUsedThreshold = conf.getLong("ext_plugin_heap_used_threshold", 0);
+                    long heapUsedThreshold_wise = conf.getLong("ext_plugin_wise_heap_used_threshold", 0);
                     long heapUsed = pack.data.getLong(CounterConstants.JAVA_HEAP_USED);
 
-                    if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
-                        AlertPack ap = new AlertPack();
+                    if("/gprtwas1/wise_prd11".equals(objName) || "/gprtwas1/wise_prd12".equals(objName) || "/gprtwas2/wise_prd21".equals(objName) || "/gprtwas2/wise_prd22".equals(objName)) {
+                        if (heapUsedThreshold_wise != 0 && heapUsed > heapUsedThreshold_wise) {
+                            AlertPack ap = new AlertPack();
 
-                        ap.level = AlertLevel.FATAL;
-                        ap.objHash = objHash;
-                        ap.title = "Heap used exceed a threshold.";
-                        ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                        ap.time = System.currentTimeMillis();
-                        ap.objType = objType;
+                            ap.level = AlertLevel.FATAL;
+                            ap.objHash = objHash;
+                            ap.title = "Heap used exceed a threshold.";
+                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
+                            ap.time = System.currentTimeMillis();
+                            ap.objType = objType;
 
-                        alert(ap);
+                            alert(ap);
+                        }
+                    } else {
+                        if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
+                            AlertPack ap = new AlertPack();
+
+                            ap.level = AlertLevel.FATAL;
+                            ap.objHash = objHash;
+                            ap.title = "Heap used exceed a threshold.";
+                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
+                            ap.time = System.currentTimeMillis();
+                            ap.objType = objType;
+
+                            alert(ap);
+                        }
                     }
 
                     if (gcTimeThreshold != 0 && gcTime > gcTimeThreshold) {
