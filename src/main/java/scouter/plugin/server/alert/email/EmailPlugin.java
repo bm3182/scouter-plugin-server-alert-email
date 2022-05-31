@@ -133,6 +133,7 @@ public class EmailPlugin {
                             String wise_to = conf.getValue("ext_plugin_email_wise_address");
                             String mpro_to = conf.getValue("ext_plugin_email_mpro_address");
                             String cis_to = conf.getValue("ext_plugin_email_cis_address");
+                            String ods_to = conf.getValue("ext_plugin_email_ods_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -279,8 +280,14 @@ public class EmailPlugin {
                                     }
                                 }
                             } else if("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
-                                if (mpro_to != null) {
+                                if (cis_to != null) {
                                     for (String addr : cis_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+                                if (ods_to != null) {
+                                    for (String addr : ods_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
@@ -400,6 +407,10 @@ public class EmailPlugin {
                 }
             } else if("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_cis_email_enabled", false )){
+                    alert(ap);
+                }
+            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas01/odsprd02".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_ods_email_enabled", false )){
                     alert(ap);
                 }
             }
