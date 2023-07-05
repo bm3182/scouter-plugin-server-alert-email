@@ -517,7 +517,7 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else if("/cjwas03/qmswas1".equals(objName) || "/cjwas03/qmswas2".equals(objName)) {
+                    } else if("/cjwas03/qmswas1".equals(objName) || "/cjwas04/qmswas2".equals(objName)) {
                         if (heapUsedThreshold_qms != 0 && heapUsed > heapUsedThreshold_qms) {
                             AlertPack ap = new AlertPack();
 
