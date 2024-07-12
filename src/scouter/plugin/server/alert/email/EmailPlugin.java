@@ -144,7 +144,10 @@ public class EmailPlugin {
                             String meta_to = conf.getValue("ext_plugin_email_meta_address");
                             String bmis_to = conf.getValue("ext_plugin_email_bmis_address");
                             String iris_to = conf.getValue("ext_plugin_email_iris_address");
-                            String live_to = conf.getValue("ext_plugin_email_live_address");
+                            String pfls_to = conf.getValue("ext_plugin_email_pfls_address");
+                            String ams_to = conf.getValue("ext_plugin_email_ams_address");
+                            String cms_to = conf.getValue("ext_plugin_email_cms_address");
+                            String fta_to = conf.getValue("ext_plugin_email_fta_address");
 
                             assert hostname != null;
                             assert port > 0;
@@ -326,9 +329,33 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
+                            } else if("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
+                                if (pfls_to != null) {
+                                    for (String addr : pfls_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_2".equals(name)) {
+                                if (ams_to != null) {
+                                    for (String addr : ams_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/cjwas03/cmsprd_1".equals(name) || "/cjwas04/cmsprd_2".equals(name)) {
+                                if (cms_to != null) {
+                                    for (String addr : cms_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
                             } else if("/cj-meta-app/cj-meta-app".equals(name)) {
                                 if (meta_to != null) {
                                     for (String addr : meta_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            } else if("/CJFTAAP/fta".equals(name)) {
+                                if (fta_to != null) {
+                                    for (String addr : fta_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
@@ -470,8 +497,24 @@ public class EmailPlugin {
                 if (conf.getBoolean("ext_plugin_exception_xlog_iris_email_enabled", false )){
                     alert(ap);
                 }
+            } else if("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_pfls_teams_enabled", false )){
+                    alert(ap);
+                }
+            } else if("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_1".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_ams_email_enabled", false )){
+                    alert(ap);
+                }
+            } else if("/cjwas03/cmsprd_1".equals(name) || "/cjwas04/cmsprd_1".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_cms_email_enabled", false )){
+                    alert(ap);
+                }
             } else if("/cj-meta-app/cj-meta-app".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_meta_email_enabled", false )){
+                    alert(ap);
+                }
+            } else if("/CJFTAAP/fta".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_fta_email_enabled", false )){
                     alert(ap);
                 }
             } else {
