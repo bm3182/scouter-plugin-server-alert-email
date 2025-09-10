@@ -505,7 +505,7 @@ public class EmailPlugin {
                     alert(ap);
                 }
             } else if("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
-                if (conf.getBoolean("ext_plugin_exception_xlog_pfls_teams_enabled", false )){
+                if (conf.getBoolean("ext_plugin_exception_xlog_pfls_email_enabled", false )){
                     alert(ap);
                 }
             } else if("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_1".equals(name)) {
@@ -584,11 +584,25 @@ public class EmailPlugin {
 
                     long heapUsedThreshold = conf.getLong("ext_plugin_heap_used_threshold", 0);
                     long heapUsedThreshold_8G = conf.getLong("ext_plugin_8G_heap_used_threshold", 0);
+                    long heapUsedThreshold_6G = conf.getLong("ext_plugin_6G_heap_used_threshold", 0);
                     long heapUsedThreshold_4G = conf.getLong("ext_plugin_4G_heap_used_threshold", 0);
                     long heapUsed = pack.data.getLong(CounterConstants.JAVA_HEAP_USED);
 
                     if("/gprtwas1/wise_prd11".equals(objName) || "/gprtwas1/wise_prd12".equals(objName) || "/gprtwas2/wise_prd21".equals(objName) || "/gprtwas2/wise_prd22".equals(objName)) {
                         if (heapUsedThreshold_8G != 0 && heapUsed > heapUsedThreshold_8G) {
+                            AlertPack ap = new AlertPack();
+
+                            ap.level = AlertLevel.FATAL;
+                            ap.objHash = objHash;
+                            ap.title = "Heap used exceed a threshold.";
+                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
+                            ap.time = System.currentTimeMillis();
+                            ap.objType = objType;
+
+                            alert(ap);
+                        }
+                    } else if("/pEacA1/PFLS_LIVE1".equals(objName) || "/pEacA2/PFLS_LIVE2".equals(objName)) {
+                        if (heapUsedThreshold_6G != 0 && heapUsed > heapUsedThreshold_6G) {
                             AlertPack ap = new AlertPack();
 
                             ap.level = AlertLevel.FATAL;
