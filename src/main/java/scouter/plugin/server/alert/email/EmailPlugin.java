@@ -614,7 +614,10 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else if("/cjwas03/expwas01".equals(objName) || "/cjwas04/expwas02".equals(objName) || "/cjwas03/qmswas1".equals(objName) || "/cjwas04/qmswas2".equals(objName) || "/cjwas03/amsprd_1".equals(objName) || "/cjwas04/amsprd_2".equals(objName) || "/cjwas03/cmsprd_1".equals(objName) || "/cjwas04/cmsprd_2".equals(objName) || "/cjirisap1/bmis_was1".equals(objName) || "/cjirisap1/iris_was1".equals(objName) || "/cjemap/bmis_was2".equals(objName) || "/cjemap/iris_was2".equals(objName)) {
+                    } else if("/cjwas03/expwas01".equals(objName) || "/cjwas04/expwas02".equals(objName) || "/cjwas03/qmswas1".equals(objName) || 
+                        "/cjwas04/qmswas2".equals(objName) || "/cjwas03/amsprd_1".equals(objName) || "/cjwas04/amsprd_2".equals(objName) || 
+                        "/cjwas03/cmsprd_1".equals(objName) || "/cjwas04/cmsprd_2".equals(objName) || "/cjirisap1/bmis_was1".equals(objName) || 
+                        "/cjirisap1/iris_was1".equals(objName) || "/cjemap/bmis_was2".equals(objName) || "/cjemap/iris_was2".equals(objName)) {
                         if (heapUsedThreshold_4G != 0 && heapUsed > heapUsedThreshold_4G) {
                             AlertPack ap = new AlertPack();
 
@@ -627,7 +630,12 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else {
+                    } else if ( "/cjescwas01/escprd1".equals(objName) || "/cjescwas02/escprd2".equals(objName) ||
+                        "/cjwas01/cis1".equals(objName) || "/cjwas02/cis2".equals(objName) ||
+                        "/cjodswas01/odsprd01".equals(objName) || "/cjodswas02/odsprd02".equals(objName) ||
+                        "/cjpcplwas1/cplwas1".equals(objName) || "/cjpcplwas2/cplwas2".equals(objName) ||
+                        "/cj-meta-app/cj-meta-app".equals(objName) || "/CJFTAAP/fta".equals(objName) ||
+                        "/CJHANAROWAS01/HANARO_PRD1".equals(objName) || "/CJHANAROWAS02/HANARO_PRD2".equals(objName)){
                         if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
                             AlertPack ap = new AlertPack();
 

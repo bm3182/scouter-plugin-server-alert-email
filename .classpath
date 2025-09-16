@@ -2,8 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="d:/scouter_workspace/scouter-plugin-server-alert-email/lib/scouter-common.jar"/>
-	<classpathentry kind="lib" path="d:/scouter_workspace/scouter-plugin-server-alert-email/lib/scouter-server.jar"/>
 	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/io/github/scouter-project/scouter-common/1.8.0/scouter-common-1.8.0.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="scouter-common"/>
