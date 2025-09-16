@@ -155,7 +155,7 @@ public class EmailPlugin {
                             assert username != null;
                             assert password != null;
                             assert from != null;
-                            //assert to != null;
+                            assert to != null;
 
                             // Get agent Name
                             String name = AgentManager.getAgentName(pack.objHash) == null ? "N/A" : AgentManager.getAgentName(pack.objHash);
@@ -601,7 +601,7 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else if("/pEacA1/PFLS_LIVE1".equals(objName) || "/pEacA2/PFLS_LIVE2".equals(objName)) {
+                    } else if ("/pEacA1/PFLS_LIVE1".equals(objName) || "/pEacA2/PFLS_LIVE2".equals(objName)) {
                         if (heapUsedThreshold_6G != 0 && heapUsed > heapUsedThreshold_6G) {
                             AlertPack ap = new AlertPack();
 
@@ -614,10 +614,7 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else if("/cjwas03/expwas01".equals(objName) || "/cjwas04/expwas02".equals(objName) || "/cjwas03/qmswas1".equals(objName) || 
-                        "/cjwas04/qmswas2".equals(objName) || "/cjwas03/amsprd_1".equals(objName) || "/cjwas04/amsprd_2".equals(objName) || 
-                        "/cjwas03/cmsprd_1".equals(objName) || "/cjwas04/cmsprd_2".equals(objName) || "/cjirisap1/bmis_was1".equals(objName) || 
-                        "/cjirisap1/iris_was1".equals(objName) || "/cjemap/bmis_was2".equals(objName) || "/cjemap/iris_was2".equals(objName)) {
+                    } else if ("/cjwas03/expwas01".equals(objName) || "/cjwas04/expwas02".equals(objName) || "/cjwas03/qmswas1".equals(objName) || "/cjwas04/qmswas2".equals(objName) || "/cjwas03/amsprd_1".equals(objName) || "/cjwas04/amsprd_2".equals(objName) || "/cjwas03/cmsprd_1".equals(objName) || "/cjwas04/cmsprd_2".equals(objName) || "/cjirisap1/bmis_was1".equals(objName) || "/cjirisap1/iris_was1".equals(objName) || "/cjemap/bmis_was2".equals(objName) || "/cjemap/iris_was2".equals(objName)) {
                         if (heapUsedThreshold_4G != 0 && heapUsed > heapUsedThreshold_4G) {
                             AlertPack ap = new AlertPack();
 
@@ -630,12 +627,20 @@ public class EmailPlugin {
 
                             alert(ap);
                         }
-                    } else if ( "/cjescwas01/escprd1".equals(objName) || "/cjescwas02/escprd2".equals(objName) ||
-                        "/cjwas01/cis1".equals(objName) || "/cjwas02/cis2".equals(objName) ||
-                        "/cjodswas01/odsprd01".equals(objName) || "/cjodswas02/odsprd02".equals(objName) ||
-                        "/cjpcplwas1/cplwas1".equals(objName) || "/cjpcplwas2/cplwas2".equals(objName) ||
-                        "/cj-meta-app/cj-meta-app".equals(objName) || "/CJFTAAP/fta".equals(objName) ||
-                        "/CJHANAROWAS01/HANARO_PRD1".equals(objName) || "/CJHANAROWAS02/HANARO_PRD2".equals(objName)){
+                    } else if ("/cjescwas01/escprd1".equals(objName) || "/cjescwas02/escprd2".equals(objName) || "/cjwas03/igap_was3".equals(objName) || "/cjwas04/igap_was4".equals(objName) || "/cjwas03/tmsprd1-1".equals(objName) || "/cjwas03/tmsprd1-2".equals(objName) || "/cjwas04/tmsprd2-1".equals(objName) || "/cjwas04/tmsprd2-2".equals(objName) || "/cjwas03/mproWas03".equals(objName) || "/cjwas04/mproWas04".equals(objName) || "/cjwas01/cis1".equals(objName) || "/cjwas02/cis2".equals(objName) || "/cjodswas01/odsprd01".equals(objName) || "/cjodswas02/odsprd02".equals(objName) || "/cjpcplwas1/cplwas1".equals(objName) || "/cjpcplwas2/cplwas2".equals(objName) || "/CJHANAROWAS01/HANARO_PRD1".equals(objName) || "/CJHANAROWAS02/HANARO_PRD2".equals(objName) || "/cj-meta-app/cj-meta-app".equals(objName) || "/CJFTAAP/fta".equals(objName)) {
+                        if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
+                            AlertPack ap = new AlertPack();
+
+                            ap.level = AlertLevel.FATAL;
+                            ap.objHash = objHash;
+                            ap.title = "Heap used exceed a threshold.";
+                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
+                            ap.time = System.currentTimeMillis();
+                            ap.objType = objType;
+
+                            alert(ap);
+                        }
+                    } else {
                         if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
                             AlertPack ap = new AlertPack();
 

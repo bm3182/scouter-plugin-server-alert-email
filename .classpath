@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/io/github/scouter-project/scouter-common/1.8.0/scouter-common-1.8.0.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/io/github/scouter-project/scouter-common/1.8.0/scouter-common-1.8.0.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="scouter-common"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -11,7 +11,7 @@
 			<attribute name="maven.groupId" value="io.github.scouter-project"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/io/github/scouter-project/scouter-server/1.8.0/scouter-server-1.8.0.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/io/github/scouter-project/scouter-server/1.8.0/scouter-server-1.8.0.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="scouter-server"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -20,7 +20,7 @@
 			<attribute name="maven.groupId" value="io.github.scouter-project"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="scala-library"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -29,7 +29,7 @@
 			<attribute name="maven.groupId" value="org.scala-lang"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="scala-reflect"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -38,7 +38,7 @@
 			<attribute name="maven.groupId" value="org.scala-lang"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/com/github/jsqlparser/jsqlparser/0.9.4/jsqlparser-0.9.4.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/com/github/jsqlparser/jsqlparser/0.9.4/jsqlparser-0.9.4.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jsqlparser"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -47,7 +47,7 @@
 			<attribute name="maven.groupId" value="com.github.jsqlparser"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/javassist/javassist/3.18.0-GA/javassist-3.18.0-GA.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="javassist"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -56,7 +56,7 @@
 			<attribute name="maven.groupId" value="org.javassist"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/com/maxmind/geoip/geoip-api/1.3.1/geoip-api-1.3.1.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/com/maxmind/geoip/geoip-api/1.3.1/geoip-api-1.3.1.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="geoip-api"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -65,7 +65,7 @@
 			<attribute name="maven.groupId" value="com.maxmind.geoip"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-server/9.4.6.v20170531/jetty-server-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-server/9.4.6.v20170531/jetty-server-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-server"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -74,7 +74,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="javax.servlet-api"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -83,7 +83,7 @@
 			<attribute name="maven.groupId" value="javax.servlet"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-http/9.4.6.v20170531/jetty-http-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-http/9.4.6.v20170531/jetty-http-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-http"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -92,7 +92,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-util/9.4.6.v20170531/jetty-util-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-util/9.4.6.v20170531/jetty-util-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-util"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -101,7 +101,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-io/9.4.6.v20170531/jetty-io-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-io/9.4.6.v20170531/jetty-io-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-io"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -110,7 +110,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.6.v20170531/jetty-servlet-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.6.v20170531/jetty-servlet-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-servlet"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -119,7 +119,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/eclipse/jetty/jetty-security/9.4.6.v20170531/jetty-security-9.4.6.v20170531.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/eclipse/jetty/jetty-security/9.4.6.v20170531/jetty-security-9.4.6.v20170531.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jetty-security"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -128,7 +128,7 @@
 			<attribute name="maven.groupId" value="org.eclipse.jetty"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="json-simple"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -137,7 +137,7 @@
 			<attribute name="maven.groupId" value="com.googlecode.json-simple"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/junit/junit/4.10/junit-4.10.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/junit/junit/4.10/junit-4.10.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="junit"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -146,7 +146,7 @@
 			<attribute name="maven.groupId" value="junit"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="hamcrest-core"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -155,7 +155,7 @@
 			<attribute name="maven.groupId" value="org.hamcrest"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/scala-lang/jline/2.10.6/jline-2.10.6.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/scala-lang/jline/2.10.6/jline-2.10.6.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jline"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -164,7 +164,7 @@
 			<attribute name="maven.groupId" value="org.scala-lang"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="jansi"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -173,7 +173,7 @@
 			<attribute name="maven.groupId" value="org.fusesource.jansi"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/org/apache/commons/commons-email/1.4/commons-email-1.4.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/org/apache/commons/commons-email/1.4/commons-email-1.4.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="commons-email"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -182,7 +182,7 @@
 			<attribute name="maven.groupId" value="org.apache.commons"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/com/sun/mail/javax.mail/1.5.2/javax.mail-1.5.2.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/com/sun/mail/javax.mail/1.5.2/javax.mail-1.5.2.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="javax.mail"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -191,7 +191,7 @@
 			<attribute name="maven.groupId" value="com.sun.mail"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="c:/Users/bm3182/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar">
+	<classpathentry kind="lib" path="c:/Users/User/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar">
 		<attributes>
 			<attribute name="maven.artifactId" value="activation"/>
 			<attribute name="maven.pomderived" value="true"/>
