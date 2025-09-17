@@ -149,13 +149,14 @@ public class EmailPlugin {
                             String cms_to = conf.getValue("ext_plugin_email_cms_address");
                             String fta_to = conf.getValue("ext_plugin_email_fta_address");
                             String hanaro_to = conf.getValue("ext_plugin_email_hanaro_address");
+                            String wings_to = conf.getValue("ext_plugin_email_wings_address");
 
                             assert hostname != null;
                             assert port > 0;
                             assert username != null;
                             assert password != null;
                             assert from != null;
-                            assert to != null;
+                            //assert to != null;
 
                             // Get agent Name
                             String name = AgentManager.getAgentName(pack.objHash) == null ? "N/A" : AgentManager.getAgentName(pack.objHash);
@@ -264,103 +265,109 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/expwas01".equals(name) || "/cjwas04/expwas02".equals(name)) {
+                            } else if ("/cjwas03/expwas01".equals(name) || "/cjwas04/expwas02".equals(name)) {
                                 if (exp_to != null) {
                                     for (String addr : exp_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/igap_was3".equals(name) || "/cjwas04/igap_was4".equals(name)) {
+                            } else if ("/cjwas03/igap_was3".equals(name) || "/cjwas04/igap_was4".equals(name)) {
                                 if (igap_to != null) {
                                     for (String addr : igap_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
+                            } else if ("/cjwas03/tmsprd1-1".equals(name) || "/cjwas03/tmsprd1-2".equals(name) || "/cjwas04/tmsprd2-1".equals(name) || "/cjwas04/tmsprd2-2".equals(name)) {
                                 if (tms_to != null) {
                                     for (String addr : tms_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
+                            } else if ("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
                                 if (wise_to != null) {
                                     for (String addr : wise_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/mproWas03".equals(name) || "/cjwas04/mproWas04".equals(name)) {
+                            } else if ("/cjwas03/mproWas03".equals(name) || "/cjwas04/mproWas04".equals(name)) {
                                 if (mpro_to != null) {
                                     for (String addr : mpro_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
+                            } else if ("/cjwas01/cis1".equals(name) || "/cjwas02/cis2".equals(name)) {
                                 if (cis_to != null) {
                                     for (String addr : cis_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
+                            } else if ("/cjodswas01/odsprd01".equals(name) || "/cjodswas02/odsprd02".equals(name)) {
                                 if (ods_to != null) {
                                     for (String addr : ods_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjpcplwas1/cplwas1".equals(name) || "/cjpcplwas2/cplwas2".equals(name)) {
+                            } else if ("/cjpcplwas1/cplwas1".equals(name) || "/cjpcplwas2/cplwas2".equals(name)) {
                                 if (cpl_to != null) {
                                     for (String addr : cpl_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/qmswas1".equals(name) || "/cjwas04/qmswas2".equals(name)) {
+                            } else if ("/cjwas03/qmswas1".equals(name) || "/cjwas04/qmswas2".equals(name)) {
                                 if (qms_to != null) {
                                     for (String addr : qms_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjirisap1/bmis_was1".equals(name) || "/cjemap/bmis_was2".equals(name)) {
+                            } else if ("/cjirisap1/bmis_was1".equals(name) || "/cjemap/bmis_was2".equals(name)) {
                                 if (bmis_to != null) {
                                     for (String addr : bmis_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjirisap1/iris_was1".equals(name) || "/cjemap/iris_was2".equals(name)) {
+                            } else if ("/cjirisap1/iris_was1".equals(name) || "/cjemap/iris_was2".equals(name)) {
                                 if (iris_to != null) {
                                     for (String addr : iris_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
+                            } else if ("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
                                 if (pfls_to != null) {
                                     for (String addr : pfls_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_2".equals(name)) {
+                            } else if ("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_2".equals(name)) {
                                 if (ams_to != null) {
                                     for (String addr : ams_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cjwas03/cmsprd_1".equals(name) || "/cjwas04/cmsprd_2".equals(name)) {
+                            } else if ("/cjwas03/cmsprd_1".equals(name) || "/cjwas04/cmsprd_2".equals(name)) {
                                 if (cms_to != null) {
                                     for (String addr : cms_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/CJHANAROWAS01/HANARO_PRD1".equals(name) || "/CJHANAROWAS02/HANARO_PRD2".equals(name)) {
-                                if (cms_to != null) {
+                            } else if ("/cjwingswas01/WINGS_PRD1-1".equals(name) || "/cjwingswas01/WINGS_PRD1-2".equals(name) || "/cjwingswas02/WINGS_PRD2-1".equals(name) || "/cjwingswas02/WINGS_PRD2-2".equals(name)) {
+                                if (wings_to != null) {
+                                    for (String addr : wings_to.split(",")) {
+                                        email.addTo(addr);
+                                    }
+                                }
+                            }  else if ("/CJHANAROWAS01/HANARO_PRD1".equals(name) || "/CJHANAROWAS02/HANARO_PRD2".equals(name)) {
+                                if (hanaro_to != null) {
                                     for (String addr : hanaro_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/cj-meta-app/cj-meta-app".equals(name)) {
+                            } else if ("/cj-meta-app/cj-meta-app".equals(name)) {
                                 if (meta_to != null) {
                                     for (String addr : meta_to.split(",")) {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if("/CJFTAAP/fta".equals(name)) {
+                            } else if ("/CJFTAAP/fta".equals(name)) {
                                 if (fta_to != null) {
                                     for (String addr : fta_to.split(",")) {
                                         email.addTo(addr);
@@ -505,7 +512,7 @@ public class EmailPlugin {
                     alert(ap);
                 }
             } else if("/pEacA1/PFLS_LIVE1".equals(name) || "/pEacA2/PFLS_LIVE2".equals(name)) {
-                if (conf.getBoolean("ext_plugin_exception_xlog_pfls_email_enabled", false )){
+                if (conf.getBoolean("ext_plugin_exception_xlog_pfls_teams_enabled", false )){
                     alert(ap);
                 }
             } else if("/cjwas03/amsprd_1".equals(name) || "/cjwas04/amsprd_1".equals(name)) {
@@ -514,6 +521,10 @@ public class EmailPlugin {
                 }
             } else if("/cjwas03/cmsprd_1".equals(name) || "/cjwas04/cmsprd_1".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_cms_email_enabled", false )){
+                    alert(ap);
+                }
+             } else if("/cjwingswas01/WINGS_PRD1-1".equals(name) || "/cjwingswas01/WINGS_PRD1-2".equals(name) || "/cjwingswas02/WINGS_PRD2-1".equals(name) || "/cjwingswas02/WINGS_PRD2-2".equals(name)) {
+                if (conf.getBoolean("ext_plugin_exception_xlog_wings_email_enabled", false )){
                     alert(ap);
                 }
             } else if("/CJHANAROWAS01/HANARO_PRD1".equals(name) || "/CJHANAROWAS02/HANARO_PRD2".equals(name)) {
@@ -588,71 +599,17 @@ public class EmailPlugin {
                     long heapUsedThreshold_4G = conf.getLong("ext_plugin_4G_heap_used_threshold", 0);
                     long heapUsed = pack.data.getLong(CounterConstants.JAVA_HEAP_USED);
 
-                    if("/gprtwas1/wise_prd11".equals(objName) || "/gprtwas1/wise_prd12".equals(objName) || "/gprtwas2/wise_prd21".equals(objName) || "/gprtwas2/wise_prd22".equals(objName)) {
-                        if (heapUsedThreshold_8G != 0 && heapUsed > heapUsedThreshold_8G) {
-                            AlertPack ap = new AlertPack();
+                    long thresholdToUse = getHeapThresholdForServer(objName, heapUsedThreshold, heapUsedThreshold_8G, heapUsedThreshold_6G, heapUsedThreshold_4G);
 
-                            ap.level = AlertLevel.FATAL;
-                            ap.objHash = objHash;
-                            ap.title = "Heap used exceed a threshold.";
-                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                            ap.time = System.currentTimeMillis();
-                            ap.objType = objType;
-
-                            alert(ap);
-                        }
-                    } else if ("/pEacA1/PFLS_LIVE1".equals(objName) || "/pEacA2/PFLS_LIVE2".equals(objName)) {
-                        if (heapUsedThreshold_6G != 0 && heapUsed > heapUsedThreshold_6G) {
-                            AlertPack ap = new AlertPack();
-
-                            ap.level = AlertLevel.FATAL;
-                            ap.objHash = objHash;
-                            ap.title = "Heap used exceed a threshold.";
-                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                            ap.time = System.currentTimeMillis();
-                            ap.objType = objType;
-
-                            alert(ap);
-                        }
-                    } else if ("/cjwas03/expwas01".equals(objName) || "/cjwas04/expwas02".equals(objName) || "/cjwas03/qmswas1".equals(objName) || "/cjwas04/qmswas2".equals(objName) || "/cjwas03/amsprd_1".equals(objName) || "/cjwas04/amsprd_2".equals(objName) || "/cjwas03/cmsprd_1".equals(objName) || "/cjwas04/cmsprd_2".equals(objName) || "/cjirisap1/bmis_was1".equals(objName) || "/cjirisap1/iris_was1".equals(objName) || "/cjemap/bmis_was2".equals(objName) || "/cjemap/iris_was2".equals(objName)) {
-                        if (heapUsedThreshold_4G != 0 && heapUsed > heapUsedThreshold_4G) {
-                            AlertPack ap = new AlertPack();
-
-                            ap.level = AlertLevel.FATAL;
-                            ap.objHash = objHash;
-                            ap.title = "Heap used exceed a threshold.";
-                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                            ap.time = System.currentTimeMillis();
-                            ap.objType = objType;
-
-                            alert(ap);
-                        }
-                    } else if ("/cjescwas01/escprd1".equals(objName) || "/cjescwas02/escprd2".equals(objName) || "/cjwas03/igap_was3".equals(objName) || "/cjwas04/igap_was4".equals(objName) || "/cjwas03/tmsprd1-1".equals(objName) || "/cjwas03/tmsprd1-2".equals(objName) || "/cjwas04/tmsprd2-1".equals(objName) || "/cjwas04/tmsprd2-2".equals(objName) || "/cjwas03/mproWas03".equals(objName) || "/cjwas04/mproWas04".equals(objName) || "/cjwas01/cis1".equals(objName) || "/cjwas02/cis2".equals(objName) || "/cjodswas01/odsprd01".equals(objName) || "/cjodswas02/odsprd02".equals(objName) || "/cjpcplwas1/cplwas1".equals(objName) || "/cjpcplwas2/cplwas2".equals(objName) || "/CJHANAROWAS01/HANARO_PRD1".equals(objName) || "/CJHANAROWAS02/HANARO_PRD2".equals(objName) || "/cj-meta-app/cj-meta-app".equals(objName) || "/CJFTAAP/fta".equals(objName)) {
-                        if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
-                            AlertPack ap = new AlertPack();
-
-                            ap.level = AlertLevel.FATAL;
-                            ap.objHash = objHash;
-                            ap.title = "Heap used exceed a threshold.";
-                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                            ap.time = System.currentTimeMillis();
-                            ap.objType = objType;
-
-                            alert(ap);
-                        }
-                    } else {
-                        if (heapUsedThreshold != 0 && heapUsed > heapUsedThreshold) {
-                            AlertPack ap = new AlertPack();
-
-                            ap.level = AlertLevel.FATAL;
-                            ap.objHash = objHash;
-                            ap.title = "Heap used exceed a threshold.";
-                            ap.message = objName + " Heap uesd(" + heapUsed + " M) exceed a threshold.";
-                            ap.time = System.currentTimeMillis();
-                            ap.objType = objType;
-
-                            alert(ap);
-                        }
+                    if (thresholdToUse != 0 && heapUsed > thresholdToUse) {
+                        AlertPack ap = new AlertPack();
+                        ap.level = AlertLevel.FATAL;
+                        ap.objHash = objHash;
+                        ap.title = "Heap used exceed a threshold.";
+                        ap.message = objName + " Heap used(" + heapUsed + " M) exceed a threshold.";
+                        ap.time = System.currentTimeMillis();
+                        ap.objType = objType;
+                        alert(ap);
                     }
 
                     if (gcTimeThreshold != 0 && gcTime > gcTimeThreshold) {
@@ -672,6 +629,36 @@ public class EmailPlugin {
         } catch (Exception e) {
             Logger.printStackTrace(e);
         }
+    }
+
+    private static boolean isEmpty(String s) { return s == null || s.trim().isEmpty(); }
+    
+    // 메모리 서버 그룹
+    private long getHeapThresholdForServer(String objName, long defaultThreshold, long threshold8G, long threshold6G, long threshold4G) {
+        String servers8G = conf.getValue("ext_plugin_heap_8g_servers", "/gprtwas1/wise_prd11,/gprtwas1/wise_prd12,/gprtwas2/wise_prd21,/gprtwas2/wise_prd22");
+        String servers6G = conf.getValue("ext_plugin_heap_6g_servers", "/pEacA1/PFLS_LIVE1,/pEacA2/PFLS_LIVE2,/cjwas03/qmswas1,/cjwas04/qmswas2");
+        String servers4G = conf.getValue("ext_plugin_heap_4g_servers", "/cjwas03/expwas01,/cjwas04/expwas02,/cjwas03/amsprd_1,/cjwas04/amsprd_2,/cjwas03/cmsprd_1,/cjwas04/cmsprd_2,/cjirisap1/bmis_was1,/cjirisap1/iris_was1,/cjemap/bmis_was2,/cjemap/iris_was2");
+        
+        if (isServerInList(objName, servers8G)) {
+            return threshold8G;
+        } else if (isServerInList(objName, servers6G)) {
+            return threshold6G;
+        } else if (isServerInList(objName, servers4G)) {
+            return threshold4G;
+        } else {
+            return defaultThreshold;
+        }
+    }
+    
+    private boolean isServerInList(String objName, String serverList) {
+        if (isEmpty(serverList)) return false;
+        String[] servers = serverList.split(",");
+        for (String server : servers) {
+            if (server.trim().equals(objName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void println(Object o) {
