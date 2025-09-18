@@ -110,7 +110,7 @@ ext_plugin_email_fta_address=gwangjin.lee@cj.net,juil.park@cj.net,mj.jeong2@cj.n
 #QMS : 남형주님, 이탁희님, 신민철님
 ext_plugin_email_qms_address=hj.nam3@cj.net,th.lee19@cj.net,mincheol.shin2@cj.net
 #CIS : 신효진님, 이탁희님
-ext_plugin_email_cis_address=cis-hj.shin24@cj.net,cis-th.lee19@cj.net
+ext_plugin_email_cis_address=hj.shin24@cj.net,th.lee19@cj.net
 #통합결재 : 이수미님, 서지윤님, 이상엽님
 ext_plugin_email_igap_address=soomi.lee@cj.net,jiyoon.seo@cj.net,sangyeup.lee@cj.net
 #전자인장계약 : 이수미님, 이상엽님, 박가람님
