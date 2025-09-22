@@ -283,7 +283,7 @@ public class EmailPlugin {
                                         email.addTo(addr);
                                     }
                                 }
-                            } else if ("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
+                            } else if ("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas1/wise_mprd13".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
                                 if (wise_to != null) {
                                     for (String addr : wise_to.split(",")) {
                                         email.addTo(addr);
@@ -479,7 +479,7 @@ public class EmailPlugin {
                 if (conf.getBoolean("ext_plugin_exception_xlog_tms_email_enabled", false )){
                     alert(ap);
                 }
-            } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
+            } else if("/gprtwas1/wise_prd11".equals(name) || "/gprtwas1/wise_prd12".equals(name) || "/gprtwas1/wise_mprd13".equals(name) || "/gprtwas2/wise_prd21".equals(name) || "/gprtwas2/wise_prd22".equals(name)) {
                 if (conf.getBoolean("ext_plugin_exception_xlog_wise_email_enabled", false )) {
                     alert(ap);
                 }
